@@ -6,16 +6,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class Produit {
 	@Id
 	@GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -23,6 +21,7 @@ public class Produit {
     private String nom;
     private double prix;
     private int quantite;
+    private String picture;
     @ManyToOne
     Categorie cat;
 

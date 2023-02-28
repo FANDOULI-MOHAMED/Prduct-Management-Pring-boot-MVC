@@ -2,8 +2,7 @@ package com.formationSpring.GastionProduits.services;
 
 import java.util.List;
 
-import com.formationSpring.GastionProduits.repositories.cathegoryRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.stereotype.Service;
 
 import com.formationSpring.GastionProduits.entities.Produit;

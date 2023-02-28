@@ -7,7 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Product</title>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous"> 
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css">
 
 
@@ -33,7 +34,7 @@
 
 <body>
 
-<form action="/ProductController/save" method="Post">
+<form action="/ProductController/save" method="Post" enctype="multipart/form-data">
 	
   	<div class="form-group  mx-sm-3 mb-2 col-2">
  		<label >nom :</label>
@@ -48,6 +49,11 @@
   	<div class="form-group  mx-sm-3 mb-2 col-2">
   		<label >quantite :</label>
 		<input type="text" class="form-control" name="quantite"> 
+	</div>
+
+	<div class="form-group  mx-sm-3 mb-2 col-2">
+		<label >image :</label>
+		<input class="form-control" type="file" name="files" multiple>
 	</div>
 
 	<div class="form-group  mx-sm-3 mb-2 col-2">

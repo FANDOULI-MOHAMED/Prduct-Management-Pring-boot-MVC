@@ -50,17 +50,22 @@
 
 <table class="table">
 
-<tr> <th>id</th> <th>nom</th> <th>prix</th> <th>quantite</th> <th>catégorie</th></tr>
+<tr> <th>id</th> <th>nom</th> <th>prix</th> <th>quantite</th> <th>catégorie</th> <th>image</th> <th colspan="2">actions</th></tr>
 <c:forEach items="${produits}" var="p">
 	<tr><td>${p.id}</td>
 		<td>${p.nom}</td>
-		<td>${p.prix}</td> 
+		<td>${p.prix}</td>
 		<td>${p.quantite}</td>
         <td>${p.cat.nom}</td>
+        <!--
+        <td><img src="@{'/uploads/'+${p.picture}}" alt="image de produit"> </td>
+-->
+        <td><img src="${pageContext.request.contextPath}/uploads/${p.picture}" alt="My Image" width="170" height="170"/>
+
 		<td> <a href="/ProductController/delete/${p.id}" class="btn btn-danger fa fa-trash" ></a></td>
 		<td> <a href="/ProductController/update/${p.id}" class="btn btn-warning fa fa-edit" ></a></td>
 	</tr>
-</c:forEach>		
+</c:forEach>
  
 </table>
 

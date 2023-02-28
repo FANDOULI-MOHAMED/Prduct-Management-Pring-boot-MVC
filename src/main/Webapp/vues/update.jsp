@@ -33,7 +33,7 @@
 
 
 
-<form action="/ProductController/save" method="Post">
+<form action="/ProductController/saveup" method="Post" enctype="multipart/form-data">
     <c:forEach items="${prod}" var="p">
     <input type="hidden"  class="form-control" name="id" value="${p.id}">
 
@@ -52,11 +52,20 @@
         <input type="text" class="form-control" name="quantite" value="${p.quantite}">
     </div>
 
+        <div class="form-group  mx-sm-3 mb-2 col-2">
+            <label >image :</label>
+            <img  src="${pageContext.request.contextPath}/uploads/${p.picture}" alt="Default Image">
+            <input class="form-control"  type="file" value="${pageContext.request.contextPath}/uploads/${p.picture}" name="files" multiple>
+
+
+
+        </div>
+
     <div class="form-group  mx-sm-3 mb-2 col-2">
         <label >categorie :</label>
         <select name="cat" class="form-control">
 
-            <option selected>${p.cat.nom}</option>
+            <option selected>${""}</option>
            <c:forEach items="${categories}" var="c">
 
                 <option   value="${c.id}">${c.nom}</option>
